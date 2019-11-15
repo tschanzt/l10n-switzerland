@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="pay_slip_ad_form" model="ir.ui.view">
+      <field name="name">payment slip advertisement form</field>
+      <field name="model">l10n_ch.payment_slip.advertisement</field>
+      <field name="arch" type="xml">
+        <form string="Payment Slip Advertisement">
+          <group>
+            <field name="sequence"/>
+            <field name="lang_id"/>
+            <field name="product_ids"/>
+            <field name="image" widget="image" />
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="pay_slip_ad_list" model="ir.ui.view">
+      <field name="name">payment slip advertisement list</field>
+      <field name="model">l10n_ch.payment_slip.advertisement</field>
+      <field name="arch" type="xml">
+        <tree string="Payment Slip Advertisement">
+            <field name="sequence"/>
+            <field name="lang_id"/>
+            <field name="product_ids"/>
+        </tree>
+      </field>
+    </record>
+
+        <record id="action_pay_slip_ad_form" model="ir.actions.act_window">
+            <field name="name">Paymentslip Ads</field>
+            <field name="res_model">l10n_ch.payment_slip.advertisement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem action="action_pay_slip_ad_form" id="manu_pay_slip_ad_form" parent="account.menu_finance_configuration" groups="account.group_account_invoice" sequence="20"/>
+
+</odoo>
